@@ -1,0 +1,85 @@
+ANGULAR
+
+- Clases
+
+Las definiciones de las clases se han de estipular en el archivo "component.ts", 
+al definirse como propiedad nos permite reutilizarlo (MODULARIZACION).
+
+- El llamado a propiedades se hace con el uso de dobles llaves.
+
+
+Los componentes en Angular se pueden crear y deben de estar compuestos, neceariamente, por:
+
+Decorador: -Selector
+	   -Template
+	   -Style
+
+Clase:	   -Propiedades/atributos
+	   -Metodos
+	   -Constructor 
+
+Asu vez, el componente puede contener componentes dentro de si.
+
+La obligatoriedad radica en que solo debe de existir un solo documento HTML (SPA).
+
+
+CREACION DE COMPONENTES:  (FORMA MANUAL)
+
+Los componentes seran extensiones de la carpeta "app" de la aplicacion, por ende, deberan de estar contenidos en la misma como sub-carpetas, la creacion es tal cual sigue:
+
+- Boton derecho sobre "app".
+- Nueva carpeta "con el nombre del modulo"
+- Boton derecho sobre la nueva carpeta y agregar "files" segun deseemos, respetando la comenclatura de Angular ("nombre".component.ts) y lo mas IMPORTANTE, la extension "ts", pues es un archivo Typescript.
+
+El componente sera conformado por el componente y el decorador:
+
+- se debe de de crear la clase:
+
+IMPERATIVO que la clase contenga el modificador de acceso "export" pues es lo que permitira acceder a la clase desde el archivo.
+
+- Encima de la clase (RESPETAR LA COMPOSICION) se ha de crear el DECORADOR, 
+la sintaxis sera : @Component + la linea de importacion (NECESARIO) 
+
+import { Component } from "@angular/core";
+
+@Component({
+
+
+*** EN ESTE AMBITO (DENTRO DEL PARENTESIS Y LA LLAVE) DEBERA DE CONTENER NUESTRO CODIGO
+
+ 	selector:"app-nombreAPP", ***LA SEPARACION SE HACE CON COMAS
+	templateUrl: "./nombreAPP.component.html" *** EL TEMPLATE HA DE APUNTAR AL ARCHIVO HTML Y CON LA RUTA ABOSULUTA PUES ES UNA CARPETA CONTENIDA Y SE HA DE DIRECCIONAR CORRECTAMENTE
+	styleUrls: "./nombreApp.component.css" *** EL STYLE Y LA DIRECCION ES OPCIONAL
+
+})
+
+Dentro de la carpeta de la nueva APP se ha de crear conjuntamente, el archivo HTML y el Style
+
+- Finalmente, luego de crear cada elemento del nuevo componente, se debe de REGISTRAR,
+el registro se debe de ejecutar en "app.module.ts"
+
+ubicando el
+
+
+@NgModule({ *** SIEMPRE EN ESTE ELEMENTO
+  declarations: [
+    AppComponent, nombreAPPComponent  ----- EN ESTA UBICACION Y SIGUIENDO LA MISMA EN CASO DE MAS MODULOS A AGREGAR ----
+  ]
+
+SIGUIENDO, debemos de incluir el componente dentro del archivo raiz HTML 
+
+Incluimos el nuevo componente como sigue, con el selector "app-nombreApp"
+
+ejm: <app-nombreAPP></app-nombreAPP> *** TAL CUAL ESTA SINTAXIS
+
+
+***  CREACION DE UN NUEVO MODULO DE FORMA AUTOMATICA ***
+
+DESDE LA CONSOLA TERMINAL, DENTRO DE LA CARPETA DE LA APP
+
+INDICAR EL SIGUIENTE COMANDO:
+
+  ng g c "nombreComponenteNuevo" + Tecla Enter (FORMA ABREVIADA)
+
+  ng generate component "nombreComponente" (FORMA COMPLETA)
+
