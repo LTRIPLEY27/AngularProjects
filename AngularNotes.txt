@@ -1,5 +1,13 @@
 ANGULAR
 
+*** Inicio del servidor Angular ***
+
+- ubicar en la terminal, carpeta de la aplicacion
+
+siguiente comanda para iniciar:
+
+	ng serve -o
+
 - Clases
 
 Las definiciones de las clases se han de estipular en el archivo "component.ts", 
@@ -82,4 +90,23 @@ INDICAR EL SIGUIENTE COMANDO:
   ng g c "nombreComponenteNuevo" + Tecla Enter (FORMA ABREVIADA)
 
   ng generate component "nombreComponente" (FORMA COMPLETA)
+
+
+		*** CODIGO INLINE ***
+
+Para insertar varias lineas inline, se debe de usar el siguiente caracter (``)y dentro del mismo, las lineas de codigo a insertar
+
+ejm:
+
+	template:`
+	   <p>
+		ejemplo de eso
+	   </p>
+		` 
+
+		*** INTERPOLACION ANGULAR ***  (PERMITE EL TEXTO DINAMICO)
+
+
+	Es la creacion de una propiedad en la clase, y referenciarla en la plantilla "HTML", la misma se referencia se hace con doble llave "{{}}"
+
 

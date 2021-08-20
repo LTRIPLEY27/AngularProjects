@@ -1,1 +1,12 @@
 <p>modulo automatico!</p>
+
+<h1>Nombre : {{nombre}}</h1> <!--INTERPOLACION DE LAS PROPIEDADES DEFINIDAS EN LA CLASE, REFERENCIA CON LA DOBLE LLAVE-->
+<h2>Apellido : {{apellido}}</h2>
+<h3>Edad : {{edad < 18 ? "menor de edad" : "mayor de edad"}}</h3>
+
+<h1>Empresa del empleado: {{empresa.value}}</h1> <!--INSERCION DEL VALOR DEL CUADRO DE TEXTO QUE IDENTIFICAMOS CON LA ALMOHADILLA O NUMERAL-->
+Introduce la empresa:<input type="text" #empresa (keyup)="0"/> <!--CON LA ALMOHADILLA IDENTIDIFACMOS CON NOMBRE AL CUADRO DE TEXTO-->
+<br />                    <!--USO DEL KEYUP "EVENT" PARA PRESCINDIR DEL BUTTON, SE DEBE DE ASIGNAR EN EL "OBJETO", EN ESTE CASO, EN LA CAJA-->
+<br />
+                                                  <!--EVENTO CON LA FUNCION Y LOS PARAMETROS QUE RECIBE-->
+<!--<input type="button" name="name" value="Inserta" (click) ="llamada(empresa.value)" /> -->

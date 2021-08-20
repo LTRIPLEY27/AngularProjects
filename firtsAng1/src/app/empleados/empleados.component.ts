@@ -10,4 +10,5 @@ import { Component } from "@angular/core";
 
 export class EmpleadosComponent { // CLASE DEL COMPONENTE NUEVO
 
+  nombre = "juan";
 }
