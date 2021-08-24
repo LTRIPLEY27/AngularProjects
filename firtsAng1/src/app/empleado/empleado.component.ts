@@ -48,7 +48,12 @@ export class EmpleadoComponent implements OnInit {
     }
   }
 
-  //empresa = "hola, que tal";
+
+  cambiaEmpresa(event:Event) { //OBJETO DEL TIPO EVENT COMO PARAMETRO
+
+    this.empresa = (<HTMLInputElement>event.target).value; // CASTING DEL OBJETO CON UN HTMLInput
+  }
+  empresa = "hola, que tal";
 
  // llamada(value: String) {} // CREACION DE LA FUNCION DEL EVENTO CARGA DEL VALOR DE LA VARIABLE
 

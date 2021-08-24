@@ -107,6 +107,87 @@ ejm:
 		*** INTERPOLACION ANGULAR ***  (PERMITE EL TEXTO DINAMICO)
 
 
-	Es la creacion de una propiedad en la clase, y referenciarla en la plantilla "HTML", la misma se referencia se hace con doble llave "{{}}"
+	Es la creacion de una propiedad en la clase, y referenciarla en la plantilla "HTML", la misma se referencia se hace con doble llave "{{}}".
+
+
+		*** PROPERTY BINDING ***
+
+Una de las maneras de establecer el Binding, es ubicar la propiedad en el objeto, y el valor, indicarlo en "[]" para verificar.
+
+ejem: 
+
+	<input type="checkbox" name="registro" value=""  [checked] ="userRegis"/> -- SIENDO EL [checked] el valor a verificar con la propiedad de la clase "userRegis".
+
+El llamado a funciones desde el HTML, se debe de ejecutar de multiples maneras, entre las cuales, las que conllevan sin evento alguno sino con el flujo del codigo:
+
+	{{getRegistroUsuario()}} -- DE ESTA FORMA --
+
+
+		*** EVENT BINDING ***
+
+
+Puente mediante a eventos desencadenados por el raton.
+
+El "EVENT BINDING" se ha de ubicar en la etiqueta HTML del objeto que desencadernara la funcion del mismo, tal cual los principios de JavaScript; la sintaxis a seguir 
+
+	<input type="checkbox" name="registro" value=""  [checked] ="userRegis"(click)="showmeRegister()"/> <!--EL EVENT BINDING se debe ubicar en la etiqueta HTML del objeto que desencadenara el evento -->
+								--- EJM: llamado a la funcion con el objeto check box, mediante el click ---
+
+	
+	*** FUNCIONES CON PARAMETROS ***
+
+
+Las funciones pueden hacer usos de los eventos adjuntados como objetos en los parametros, lo cual nos proporciona el acceso de multiples metodos del mismo,
+con el "event" existe una clase y sus metodos del mismo, para hacer uso de la misma se ha de ejecutar el nombre y el tipo de objeto como parametro:
+
+ejm: clase "Event"
+		-- "nombre" = nombre del parametro : "Event" tipo de parametro, en este caso es un "Event"
+nombreFuncion(nombre:Event)
+
+             //USO DEL OBJETO CREADO EN EL EVENTO COMO PARAMETRO, SE DEBE DE IDENTIFICAR : NOMBRE DEL PARAMETRO Y TIPO EJM: "event:Event"
+  showmeRegister(event:Event) { //FUNCION DEL EVENTO SOBRE EL CHECKBOX
+    //alert("user register"); // LAS FUNCIONES DE JAVASCRIPT FUNCIONAN PARECIDO AL TYPESCRIPT
+    //this.textoRegistro = "User Registred Sucesfully";
+    //alert(event.target);
+
+    // EL LLAMADO AL OBJETO "EVENT" PARA USO DEL IF, SE DEBE DE EJECUTAR DENTRO DE UNA ETIQUETA PARA RECOGER LOS VALORES
+    if ((<HTMLInputElement> event.target).value == "si") { // EL CONDICIONAL DEL IF ESTA CASTEANDO EL OBJETO PARA OBTENER EL VALUE
+      this.textoRegistro = "Just Register";
+    } else {
+      this.textoRegistro = "Nobody register yet";
+    }
+  }
+
+
+	*** TWO WAY BINDING ***
+
+- Directiva ngModel
+- Banana in Box = [()] --- Binding Bidireccional
+
+
+Para el uso de la directiva "ngModel" se ha de importar desde el modulo, desde "app-Module.ts", ubicando el import e insertando "FormsModule", como sigue:
+
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent, EmpleadosComponent, EmpleadoComponent // ACA DEBEMOS DE REGISTRAR CADA MOSULO QUE CREEMOS SEPARADOS POR COMAS PARA DISPARARLO
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule --- INSERCION DE LA FORMSMODULE PARA USO DE LA DIRECTIVA "ngModule" en el binding bidireccional ---
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+
+
+
+
+
+
+
 
 

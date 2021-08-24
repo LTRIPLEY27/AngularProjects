@@ -4,18 +4,23 @@
 <h2>Apellido : {{apellido}}</h2>
 <h3>Edad : {{edad < 18 ? "menor de edad" : "mayor de edad"}}</h3>
 
-<h1>Empresa del empleado: {{empresa.value}}</h1> <!--INSERCION DEL VALOR DEL CUADRO DE TEXTO QUE IDENTIFICAMOS CON LA ALMOHADILLA O NUMERAL-->
-
+<h1>Empresa del empleado: {{empresa}}</h1> <!--INSERCION DEL VALOR DEL CUADRO DE TEXTO QUE IDENTIFICAMOS CON LA ALMOHADILLA O NUMERAL-->
+<!--{{empresa.value}}-->
 {{textoRegistro}}
 <br />
+<!--EVENTO DE LA CLASE "INPUT"-->
+<!---Introduce la empresa: <input type="text" name="" value="" (input) ="cambiaEmpresa($event)"/-->
 
-Introduce la empresa:<input type="text" #empresa (keyup)="0" [disabled]="habilitarCuadro"/> <!--CON LA ALMOHADILLA IDENTIDIFACMOS CON NOMBRE AL CUADRO DE TEXTO-->
+<!--USO DE DEL BINDING BIDIRECCIONAL CON LA DIRECTIVA NG Y BANANA IN BOX-->
+  Introduce la empresa: <input type="text" name="" value="" [(ngModel)] = "empresa"/>
+
+<!--Introduce la empresa:<input type="text" #empresa (keyup)="0" [disabled]="habilitarCuadro"/> <!--CON LA ALMOHADILLA IDENTIDIFACMOS CON NOMBRE AL CUADRO DE TEXTO-->
 <br />                    <!--USO DEL KEYUP "EVENT" PARA PRESCINDIR DE L BUTTON, SE DEBE DE ASIGNAR EN EL "OBJETO", EN ESTE CASO, EN LA CAJA-->
 <br />
-                                                  <!--EVENTO CON LA FUNCION Y LOS PARAMETROS QUE RECIBE-->
+<!--EVENTO CON LA FUNCION Y LOS PARAMETROS QUE RECIBE-->
 <!--<input type="button" name="name" value="Inserta" (click) ="llamada(empresa.value)" /> -->
-
-Registrado : <input type="radio" name="registro" value="si"  [checked] ="userRegis"(click)="showmeRegister($event)"/> <!--EL EVENT BINDING se debe ubicar en la etiqueta HTML del objeto que desencadenara el evento -->
-No Registrado : <input type="radio" name="registro" value="no" (click) ="showmeRegister($event)" />                               <!--SE ADHIERE UN ARGUMENTO EN LA FUNCION, SE HA DE HACER CON EL SIGNO DOLAR-->            
+Registrado :
+<input type="radio" name="registro" value="si" [checked]="userRegis" (click)="showmeRegister($event)" /> <!--EL EVENT BINDING se debe ubicar en la etiqueta HTML del objeto que desencadenara el evento -->
+No Registrado :
+<input type="radio" name="registro" value="no" (click)="showmeRegister($event)" />                               <!--SE ADHIERE UN ARGUMENTO EN LA FUNCION, SE HA DE HACER CON EL SIGNO DOLAR-->
 {{getRegistroUsuario()}}  <!--LLAMADO A LA FUNCION DEL BINDING-->
-
