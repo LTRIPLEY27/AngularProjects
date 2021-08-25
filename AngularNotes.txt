@@ -1,12 +1,21 @@
-ANGULAR
+					ANGULAR
 
-*** Inicio del servidor Angular ***
+	*** Inicio del servidor Angular ***
 
-- ubicar en la terminal, carpeta de la aplicacion
+- ubicar en la terminal, carpeta de la aplicacion.
 
 siguiente comanda para iniciar:
 
 	ng serve -o
+
+	*** Creacion de nuevo proyecto en la misma carpeta (Desde consola) ***
+
+- ubicar en la terminal, carpeta de la aplicacion.
+
+
+siguiente comanda para iniciar:
+
+	ng new nombreApp
 
 - Clases
 
@@ -183,6 +192,20 @@ import { FormsModule } from '@angular/forms';
 })
 
 
+		*** SINTESIS ***
+
+- Edicion HTML, en la plantilla "app.component.html" (BOOTSTRAP, Y DEMAS).
+- Creacion y edicion de clases, atributos, metodos y demas (RUDE CODE), en la plantilla: "app.component.ts". 
+
+- instalar uso de Bootstrap:
+
+Mediante la consola :
+
+	 npm install bootstrap@next
+
+- Ubicar el archivo "Angular Json".
+- Ubicar el apartado "styles" e insertar la ruta abosluta de la ubicacion de bootstrap : "node_modules/bootstrap/dist/css/bootstrap.css"
+- repetir la direccion en el apartado "scripts" pero cambiar el archivo "css" por "js" unicamente en este apartado: "node_modules/bootstrap/dist/js/bootstrap.js"
 
 
 

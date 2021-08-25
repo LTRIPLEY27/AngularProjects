@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>  <!--REFERENCIA A LA VARIABLE CREADA EN LA CLASE-->
+
+<div class="container"> <!--INSERSION DE BOOTSTRAP A TRAVES DEL ARCHIVO JSON-->
+
+  <form action="/" method="post">
+    <!--REFERENCIA A LA "BANANA IN BOX" PARA QUE EL BINDING SEA BIDIRECCIONAL "ngModel"-->
+    Number 1: <input type="number" name="num1" [(ngModel)]="num1" value="" />
+    <!--EL "NAME" TAMBIEN DEBE DE REFERENCIAR AL NOMBRE DE LA VARIABLE-->
+    Number 2: <input type="number" name="num2" [(ngModel)]="num2" value="" />
+
+    <input type="submit" name="name" value="Calculate" (click)="sum()" />
+
+    <input type="submit" name="name" value="RestMe" (click)="rest()" class="btn btn-primary" />
+  </form>
+
+  <div id="result">
+    Resultado : {{resultado}}
+  </div>
+</div>

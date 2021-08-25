@@ -1,0 +1,13 @@
+input {
+    display : block;
+}
+
+h1 {
+    color : rebeccapurple;
+    font : 400px;
+    position: center;
+}
+
+body {
+    background-color : peachpuff;
+}
