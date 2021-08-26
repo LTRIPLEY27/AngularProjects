@@ -11,6 +11,18 @@
   </form>
 
       <!--USO DE LA DIRECTIVA ngIF, LA SINTAXIS ES TAL CUAL CON ASTERISCO : "*ngIf""-->
-  <div *ngIf ="register">{{message}}</div>
+  <div *ngIf ="register; else sinRegistrar">{{message}}</div>
 
+  <ng-template #sinRegistrar> <!--ESTAMOS ANCLANDO EL ELSE DEL ngIf CON EL NUMERAL, SE DEBE DE HACER DE ESTA FORMA EL LLAMADO-->
+
+    <div>ESTO ES UN TEMPLATE NG</div>
+
+  </ng-template>
+
+  <BR />
+  <br />
+
+  <ul> <!--USO DE LA DIRECTIVA "ngFor" PARA RECORRER EL ARRAY DE "ENTRADAS" Y ALMACENARLO EN LA VARIABLE "HERO" MOSTRANDO LA PROPIEDAD "TITLE"-->
+    <li *ngFor="let hero of entradas; let i = index"><span style="font-size: larger;">{{hero.title}}</span> .Entrada{{i + 1}}</li>
+  </ul>
 </div>

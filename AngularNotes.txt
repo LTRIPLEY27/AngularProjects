@@ -1,5 +1,9 @@
 					ANGULAR
 
+Short Bible: https://angular.io
+
+
+
 	*** Inicio del servidor Angular ***
 
 - ubicar en la terminal, carpeta de la aplicacion.

@@ -12,6 +12,19 @@ export class AppComponent {
   lastname: string = "";
   message = "";
   register = false;
+  entradas: Array<any> = []; // ARRAY DE OBJETOS
+ // ARRAY DE OBJETOS
+ // ARRAY DE OBJETOS
+
+  constructor() {
+    this.entradas = [ // MANERA DE EXPLICITAR UN ARRAY
+      {title : "Python a new era"},
+      {title : "Java the king role" },
+      {title : "JavaScript future king" },
+    ]
+  }
+
+
 
   getRegister(): void { //LOS VALORES DE LA VARIABLE SE HACEN POSIBLE ASIGNANDOLOS EN EL OBJETO Y LA ETIQUETA HTML CON <BANANA IN BOX> [(ngModel)] y el nombre de la variable
     
