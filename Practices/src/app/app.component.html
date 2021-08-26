@@ -1,0 +1,24 @@
+<div class="container">
+  <!--<h1>Practica</h1-->
+
+  <h2>{{titulo}}</h2>
+
+  <form>
+
+    Nombre: <input type="text" name="name" value="" [(ngModel)]="name" />
+
+    Apellido : <input type="text" [(ngModel)] ="lastname"name="lastname" value="" />
+
+    Cargo: <input type="text" name="position" value="" [(ngModel)] ="position"/>
+
+    Salario: <input type="number" name="salary" [(ngModel)] ="salary"value="" />
+    <br />
+    <br />
+    <input type="submit" name="name" value="Registro" (click) ="getRegister()"/>
+
+  </form>
+  <br />
+  <br />
+
+  <div *ngIf="regi">{{register}}</div>
+</div>
