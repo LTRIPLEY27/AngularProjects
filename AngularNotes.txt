@@ -196,7 +196,7 @@ import { FormsModule } from '@angular/forms';
 
 - Edicion HTML, en la plantilla "app.component.html" (BOOTSTRAP, Y DEMAS).
 - Creacion y edicion de clases, atributos, metodos y demas (RUDE CODE), en la plantilla: "app.component.ts". 
-
+- EL BANANA IN BOX ES EL QUE PERMITE LA TRASLACION DEL VALOR DEL CUADRO TEXTO A LA VARIABLE.
 - instalar uso de Bootstrap:
 
 Mediante la consola :
@@ -209,8 +209,33 @@ Mediante la consola :
 
 
 
+		*** DIRECTIVAS ***
+
+	Permiten agregar y eliminar elemntos de la aplicacion mediante el DOM (etiquetas HTML).
 
 
+3 tipos:
+- Componente: 
+	a) directiva Angular: @Component, @Module
+	b) directiva Personalizada: Custom.
+- Estructura:
+	entre muchas estan:
+	- ngIf
+	- ngFor
+	- ngSwitch
+	- ngPlural
+	- ngTemplate
+	- ngComponnetOutlet 
+- Atributo:
+	- ngClass
+	- ngStyle
+	- ngModel
 
+ejm:
+		la sintaxis es basicamente una sintesis de un metodo, en el caso del if, dentro de una etiqueta html.
 
+	
+      <!--USO DE LA DIRECTIVA ngIF, LA SINTAXIS ES TAL CUAL CON ASTERISCO : "*ngIf""-->
+  <div *ngIf ="register">{{message}}</div>
 
+--- MODIFICA LA ESTRUCTURA DEL DOM ---

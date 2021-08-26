@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Inicio de Directivas</h1>
+  <form>                              <!--EL BANANA IN BOX ES EL QUE PERMITE LA TRASLACION DEL VALOR DEL CUADRO TEXTO A LA VARIABLE-->
+    Nombre: <input type="text" name="name" [(ngModel)]="name"value="" />
+    Apellido: <input type="text" name="lastname" [(ngModel)] ="lastname"value="" />
+    Correo: <input type="text" name="email" [(ngModel)] ="email"value="" />
+
+
+            <br />
+            <input type="submit" value="Register" (click)="getRegister()" class="btn btn-danger" />
+  </form>
+
+      <!--USO DE LA DIRECTIVA ngIF, LA SINTAXIS ES TAL CUAL CON ASTERISCO : "*ngIf""-->
+  <div *ngIf ="register">{{message}}</div>
+
+</div>
