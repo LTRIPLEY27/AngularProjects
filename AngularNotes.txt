@@ -2,6 +2,8 @@
 
 Short Bible: https://angular.io
 
+Bible: call to Intelligence :   Ctrl + space 
+
 
 
 	*** Inicio del servidor Angular ***
@@ -243,3 +245,76 @@ ejm:
   <div *ngIf ="register">{{message}}</div>
 
 --- MODIFICA LA ESTRUCTURA DEL DOM ---
+
+
+		*** OBJETOS (POO) TYPESCRIPT ***
+
+Instalar las librerias jquery y popper:
+
+desde consola:
+	
+	npm i jquery popper.js --save
+
+
+luego de instaladas, debemos de insertar manualmente en el archivo "Angular.json" de la app, ubicar el apartado de scripts y adjuntarlo con la direccion raiz:
+
+	ejm:
+	"scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js"
+            ]
+
+		*** CREACION DE CLASES ***
+
+- Ubicamos encima de la carpeta "app".
+- Presionamos boton izquierdo, "nuevo archivo". 
+- indicamos el nombre con la siguiente sintaxis: "nombreArchivo.model.ts".
+- En este archivo debemos de hacer la "export class nombreClase { }.
+
+
+		*** USO DE CONSTRUCTOR, ATRIBUTOS Y METODOS ***
+
+En el archivo donde construiremos las clases, deberan de recibir por parametro la siguiente sintaxis TypeScript:
+
+- Definir los atributos de la clase.
+- Definir el nombre del parametro y el tipo de dato: constructor(nombreParametro:number, nombreParametro:string y tipos de datos) { --- SIEMPRE RESPETANDO ESTA SINTAXIS DE RECEPCION ---
+	ejm:
+
+		constructor(nombre:string, apellido:string, cargo:){
+
+			--- INICIAR LOS ATRIBUTOS COMO EN CUALQUIER CONSTRUCTOR ---
+
+		}
+
+- Los objetos se deben de crear en la "app.component.ts".
+- Debemos de importar la clase que hemos creado:
+	manualmente: introducir la siquiente linea al principio de "app.component.ts"
+
+		import { Employee } from './employeer.model';
+	
+	mecanicamente: ver el error y desplazarnos a "import".
+
+- Definir el objeto de la clase:
+	
+  empleado: Employee[] = [ // DEFINICION DE UN OBJETO DE LA CLASE EMPLEADO
+
+    new Employee("Juan", "Diaz", "Goverment", 9000),
+    new Employee("Ryu", "Inuyasha", "Ninja", 5000),
+    new Employee("Esther", "Rosevelt", "President", 9900),
+    new Employee("Obi Wan", "Kenobi", "Jedi", 1000)
+
+
+  ];
+
+
+		*** INTERCAMBIO DE LOS VALORES DE LAS VARIABLES ***
+
+En TypeScript, debemos de asignar las variables y los metodos globales en el modulo "app.component.ts". Los atributos de los objetos se han de definir en la clase de forma separada.
+
+- se deben de asignar los atributos y los metodos, de igual forma, con la directiva [(ngModel)].
+- desde el modulo "app.component.ts" se debe de instanciar la clase, para que el constructor reciba los parametros, de esta forma:
+
+	
+
+

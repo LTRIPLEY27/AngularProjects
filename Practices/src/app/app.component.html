@@ -1,5 +1,48 @@
+<!--SOLUCION-->
+
 <div class="container">
-  <!--<h1>Practica</h1-->
+
+  <h1>{{titulo}}</h1>
+
+  <br />
+  <br />
+
+  <form class="form-group row">
+    <!-- SE LE DEBE DE ASIGNAR UN ID  -->
+    Name : <input type="text" name="name" id="name" [(ngModel)]="boxName" />
+                                    <!--LA DIRECTIVA "ngModel" SE DEBE ASIGNAR AL CUADRO QUE RECIBE EL VALOR-->
+    Apellido : <input type="text" id="lastname" name="lastname" value="" [(ngModel)] ="boxLastname" />
+
+    Cargo: <input type="text" id="position" name="position" value="" [(ngModel)]="boxPosition" />
+
+    Salario: <input type="number" id="salary" name="salary" [(ngModel)]="boxSalary" value="" />
+
+    <br />
+    <br />
+    <input type="submit" name="name" value="Registro" (click)="toString()" class="btn btn-danger" />
+
+  </form>
+
+  <div class="row">
+    <div class="col-md-6">  <!--USO DE LA DIRECTIVA "ngForm" CON EL OBJETO-->
+      <div *ngFor="let emplea of empleados; let i= index;">
+
+        {{i+1}} {{emplea.name}} {{emplea.lastname}} {{emplea.position}} {{emplea.salary}}
+         
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+                            <!--MI VERSION-->
+<!---
+<div class="container">
+  <!--<h1>Practica</h1>
 
   <h2>{{titulo}}</h2>
 
@@ -14,11 +57,11 @@
     Salario: <input type="number" name="salary" [(ngModel)] ="salary"value="" />
     <br />
     <br />
-    <input type="submit" name="name" value="Registro" (click) ="getRegister()"/>
+    <input type="submit" name="name" value="Registro" (click) ="getRegister()" class="btn btn-danger"/>
 
   </form>
   <br />
   <br />
 
-  <div *ngIf="regi">{{register}}</div>
-</div>
+<!--  <div *ngIf="regi">{{register}}</div> 
+</div-->
