@@ -12,6 +12,7 @@ export class AppComponent {
   lastname: string = "";
   message = "";
   register = false;
+  cargo: string = "";
   entradas: Array<any> = []; // ARRAY DE OBJETOS
  // ARRAY DE OBJETOS
  // ARRAY DE OBJETOS

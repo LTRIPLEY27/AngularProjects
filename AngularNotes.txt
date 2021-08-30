@@ -315,6 +315,20 @@ En TypeScript, debemos de asignar las variables y los metodos globales en el mod
 - se deben de asignar los atributos y los metodos, de igual forma, con la directiva [(ngModel)].
 - desde el modulo "app.component.ts" se debe de instanciar la clase, para que el constructor reciba los parametros, de esta forma:
 
-	
+	Ejm:
+
+	boxName: string = "";   //LA DEFINICION DE LA VARIABLE A ALMACENAR EN LA DIRECTIVA SE DEBE DE DECLARAR EN ESTE APARTADO "app.component.ts"
+  	boxLastname: string = "";
+  	boxPosition: string = "";
+  	boxSalary: number = 0;
+
+  toString() { //LLAMADO A LA INSTANCIA
+
+    let miEmployee = new Employee(this.boxName, this.boxLastname, this.boxPosition, this.boxSalary);
+    this.empleados.push(miEmployee); // INSERCION DEL NUEVO EMPLEADO EN EL ARRAY CON EL METODO PUSH
+
+  }
+ 
+
 
 

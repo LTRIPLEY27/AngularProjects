@@ -1,19 +1,27 @@
 <div class="container">
   <h1>Inicio de Directivas</h1>
-  <form>                              <!--EL BANANA IN BOX ES EL QUE PERMITE LA TRASLACION DEL VALOR DEL CUADRO TEXTO A LA VARIABLE-->
-    Nombre: <input type="text" name="name" [(ngModel)]="name"value="" />
-    Apellido: <input type="text" name="lastname" [(ngModel)] ="lastname"value="" />
-    Correo: <input type="text" name="email" [(ngModel)] ="email"value="" />
+  <form>
+    <!--EL BANANA IN BOX ES EL QUE PERMITE LA TRASLACION DEL VALOR DEL CUADRO TEXTO A LA VARIABLE-->
+    Nombre: <input type="text" name="name" [(ngModel)]="name" value="" />
+    Apellido: <input type="text" name="lastname" [(ngModel)]="lastname" value="" />
+    Correo: <input type="text" name="email" [(ngModel)]="email" value="" />
+    Cargo: <input type="text" name="name" value="" [(ngModel)]="cargo" />
 
-
-            <br />
-            <input type="submit" value="Register" (click)="getRegister()" class="btn btn-danger" />
+    <br />
+    <input type="submit" value="Register" (click)="getRegister()" class="btn btn-danger" />
   </form>
 
-      <!--USO DE LA DIRECTIVA ngIF, LA SINTAXIS ES TAL CUAL CON ASTERISCO : "*ngIf""-->
-  <div *ngIf ="register; else sinRegistrar">{{message}}</div>
 
-  <ng-template #sinRegistrar> <!--ESTAMOS ANCLANDO EL ELSE DEL ngIf CON EL NUMERAL, SE DEBE DE HACER DE ESTA FORMA EL LLAMADO-->
+  <!--USO DE LA DIRECTIVA ngIF, LA SINTAXIS ES TAL CUAL CON ASTERISCO : "*ngIf""-->                                                       <!--CONDICIONAL TERNARIO PARA PLICAR DIRECTIVA-->
+  <!---div *ngIf ="register; else sinRegistrar">{{message}} <br /><br />el nombre es: {{name}}, apellido: {{lastname}}, email: {{email}}, cargo: <span [ngStyle]="{color: cargo == 'director' ?  'yellow' : 'blue'}">{{cargo}}</span> </!--div-->
+
+
+
+  <!--USO DE LA DIRECTIVA [ngClass] PERMITE USAR UNA HOJA DE ESTILOS EXTERNA DONDE SE AGRUPEN MULTIPLES CARACTERISTICAS CCS-->
+  <div *ngIf="register; else sinRegistrar">{{message}} <br /><br />el nombre es: {{name}}, apellido: {{lastname}}, email: {{email}}, cargo: <span [ngClass]="{director:cargo == 'director'}">{{cargo}}</span> </div>
+
+  <ng-template #sinRegistrar>
+    <!--ESTAMOS ANCLANDO EL ELSE DEL ngIf CON EL NUMERAL, SE DEBE DE HACER DE ESTA FORMA EL LLAMADO-->
 
     <div>ESTO ES UN TEMPLATE NG</div>
 
@@ -22,7 +30,8 @@
   <BR />
   <br />
 
-  <ul> <!--USO DE LA DIRECTIVA "ngFor" PARA RECORRER EL ARRAY DE "ENTRADAS" Y ALMACENARLO EN LA VARIABLE "HERO" MOSTRANDO LA PROPIEDAD "TITLE"-->
+  <ul>
+    <!--USO DE LA DIRECTIVA "ngFor" PARA RECORRER EL ARRAY DE "ENTRADAS" Y ALMACENARLO EN LA VARIABLE "HERO" MOSTRANDO LA PROPIEDAD "TITLE"-->
     <li *ngFor="let hero of entradas; let i = index"><span style="font-size: larger;">{{hero.title}}</span> .Entrada{{i + 1}}</li>
   </ul>
 </div>

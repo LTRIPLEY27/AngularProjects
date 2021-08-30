@@ -1,3 +1,9 @@
 input {
     display : block;
 }
+
+.director {  /*USO DE LA DIRECTIVA ngClass*/
+    color: red;
+    font-weight : bold;
+    text-decoration: underline;
+}
