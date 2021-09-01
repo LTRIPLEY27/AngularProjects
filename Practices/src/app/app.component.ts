@@ -14,7 +14,7 @@ export class AppComponent {
 
   empleados: Employee[] = [ // DEFINICION DE UN OBJETO DE LA CLASE EMPLEADO
 
-  new Employee("Juan", "Diaz", "Goverment", 9000),
+    new Employee("Juan", "Diaz", "Goverment", 9000),
     new Employee("Ryu", "Inuyasha", "Ninja", 5000),
     new Employee("Esther", "Rosevelt", "President", 9900),
     new Employee("Obi Wan", "Kenobi", "Jedi", 1000),

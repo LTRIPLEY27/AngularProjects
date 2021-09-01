@@ -23,17 +23,16 @@
 
   </form>
 
-  <div class="row">
-    <div class="col-md-6">  <!--USO DE LA DIRECTIVA "ngForm" CON EL OBJETO-->
-      <div *ngFor="let emplea of empleados; let i= index;">
+  <br /><br />
+                                                            
+  <app-empleado-hijo-component *ngFor="let emplea of empleados; let i= index;"[empleadoLista] ="emplea" [indice] ="i"> </app-empleado-hijo-component> <!--INCRUSTACION COMPONENTE HIJO DENTRO DE PADRE-->
 
-        {{i+1}} {{emplea.name}} {{emplea.lastname}} {{emplea.position}} {{emplea.salary}}
-         
-      </div>
+  
 
-    </div>
+  <br />
+  <br />
 
-  </div>
+
 
 </div>
 

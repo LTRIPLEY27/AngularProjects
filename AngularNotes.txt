@@ -330,5 +330,66 @@ En TypeScript, debemos de asignar las variables y los metodos globales en el mod
   }
  
 
+			*** COMUNICACION ENTRE COMPONENTES ***
+
+	- De padre a hijo:
+		@Input()
+
+	- De hijo a padre:
+		@Output()
+
+
+Para hacer la intervencion d elos componentes entre el "input" y "output", se han de asignar un nombre a la variable de las directivas entre corchetes y declararla en el "app.component.empleado-hijo" como variable.
+ 
+
+	--- FLUJO HIJO A PADRE ---
+ejem:
+
+	- en padre component (app.component.html):
+
+	<app-empleado-hijo-component *ngFor="let emplea of empleados; let i= index;"[empleadoLista] ="emplea" [indice] ="i"> </app-empleado-hijo-component> <!--INCRUSTACION COMPONENTE HIJO DENTRO DE PADRE-->
+
+	- en hijo component (app.component.ts):
+
+		export class EmpleadoHijoComponentComponent implements OnInit {
+
+		  @Input() empleadoLista: Employee;
+
+		  @Input() indice: number; // DATO QUE RECIBE DEL PADRE CON LA ETIQUETA DEL NOMBRE
+
+		  constructor() { }
+
+		  ngOnInit(): void {
+  		}
+
+	}
+
+Y adherimos la etiqueta en hijo component (app.component.html) para que se reflejen
+
+	<div class="row">
+  		<div class="col-md-6">
+    		<!--USO DE LA DIRECTIVA "ngForm" CON EL OBJETO-->
+    			<div> <!--/*ngFor ="let emplea of empleados; let i= index;"-->
+   			   {{indice+1}} {{empleadoLista.name}} {{empleadoLista.lastname}} {{empleadoLista.position}} {{empleadoLista.salary}} ---SE DEBEN DE USAR EL NOMBRE DE LAS ETIQUETAS QUE USAMOS EN PADRE ---
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	--- FLUJO PADRE A HIJO ---    bible: https://angular.io/guide/inputs-outputs
+
+- Se debe de configurar el componete "child"
+
+	con la exportacion:
+
+	en componente hijo (app.component.ts)
+
+	linea de clase (antes del constructor):
+	
+		@Output() caracterEmpleado = new EventEmitter<string>();
+
 
 
